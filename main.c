@@ -127,9 +127,12 @@ int main(int argc, char *argv[]) {
         printf("Generated Sudoku Puzzle:\n");
         printGrid(grid);
     } else if (strcmp(argv[1], "solve") == 0) {
-        generateRandomSudoku(grid);
-        printf("Generated Sudoku Puzzle:\n");
-        printGrid(grid);
+        printf("Enter the Sudoku puzzle:\n");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                scanf("%d", &grid[i][j]);
+            }
+        }
         printf("\nSolving Sudoku Puzzle:\n");
         if (solveSudoku(grid))
             printGrid(grid);
